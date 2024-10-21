@@ -205,7 +205,7 @@ El proyecto incluye pruebas unitarias usando PHPUnit.
 1. Crear alias para ejecucion phpunit.bat (opcional)
 
 ```bash
-Set-Alias phpunit 'ruta_proyecto\GeoIpInfo\vendor\bin\phpunit.bat'  
+Set-Alias phpunit 'ruta_proyecto/{miProyecto}\vendor\bin\phpunit.bat'  
 ```
 
 2. Ejecutar las pruebas unitarias

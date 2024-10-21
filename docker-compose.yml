@@ -1,0 +1,37 @@
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE: ipSearchLocation
+      MYSQL_USER:
+      MYSQL_PASSWORD:
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db-init/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - mynetwork
+
+  php-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php-container
+    depends_on:
+      - mysql-db
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+      - ./.htaccess:/var/www/html/.htaccess
+    networks:
+      - mynetwork
+
+volumes:
+  db_data:
+
+networks:
+  mynetwork:

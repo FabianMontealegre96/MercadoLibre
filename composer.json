@@ -1,0 +1,26 @@
+{
+  "name": "fabian/iplocalization-api",
+  "version": "1.0.0",
+  "description": "Proyecto mercado libre con Clean Architecture",
+  "require": {
+    "ext-curl": "*",
+    "ext-pdo": "*",
+    "php-di/php-di": "^7.0",
+    "ext-mysql_xdevapi": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Domain\\": "src/Domain/",
+      "Helpers\\": "src/Helpers/",
+      "Infrastructure\\": "src/Infrastructure/",
+      "Application\\": "src/Application/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "require-dev": {
+    "phpunit/phpunit": "11"
+  }
+}

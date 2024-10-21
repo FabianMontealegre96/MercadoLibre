@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# Reescribe la URL 'SearchIP/1.1.1.1' (o cualquier IP) a 'GetDataIp.php?ip=1.1.1.1'
+RewriteRule ^SearchIP/([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})$ public/GetDataIp.php?ip=$1 [L]
+# Reescribe la URL 'StatisticsDistance a GetStatistics.php
+RewriteRule ^StatisticsDistance$ public/GetStatistics.php [L]
+
